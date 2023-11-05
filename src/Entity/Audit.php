@@ -42,6 +42,16 @@ class Audit
      */
     private $agent;
 
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $relation_1;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     */
+    private $relation_2;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -103,6 +113,30 @@ class Audit
     public function setAgent(string $agent): self
     {
         $this->agent = $agent;
+
+        return $this;
+    }
+
+    public function getRelation1(): ?string
+    {
+        return $this->relation_1;
+    }
+
+    public function setRelation1(string $relation_1): self
+    {
+        $this->relation_1 = $relation_1;
+
+        return $this;
+    }
+
+    public function getRelation2(): ?string
+    {
+        return $this->relation_2;
+    }
+
+    public function setRelation2(?string $relation_2): self
+    {
+        $this->relation_2 = $relation_2;
 
         return $this;
     }
