@@ -23,7 +23,7 @@ class Audit
     private $type_operation;
 
     /**
-     * @ORM\Column(type="date")
+     * @ORM\Column(type="datetime")
      */
     private $date;
 

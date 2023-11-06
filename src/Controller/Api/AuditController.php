@@ -16,7 +16,7 @@ class AuditController extends AbstractController
      */
     public function showLimit2(AuditRepository $auditRepository, SerializerInterface $serializer)
     {
-        $audits = $auditRepository->findBy(array(), array('id' => 'DESC'),2);
+        $audits = $auditRepository->findBy(array(), array('id' => 'DESC'),6);
         $jsonAffiche = $serializer->serialize($audits, 'json');
         return new JsonResponse($jsonAffiche, Response::HTTP_OK, [], true);
     }
